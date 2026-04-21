@@ -1,10 +1,5 @@
-
 const Navbar = () => {
-  return (
-    <header>
-        
-    </header>
-  )
-}
+  return <header></header>;
+};
 
-export default Navbar
+export default Navbar;

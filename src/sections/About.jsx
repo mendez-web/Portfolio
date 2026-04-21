@@ -1,10 +1,5 @@
-
 const About = () => {
-  return (
-    <section>
-        
-    </section>
-  )
-}
+  return <section></section>;
+};
 
-export default About
+export default About;
