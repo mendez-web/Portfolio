@@ -1,7 +1,12 @@
 function App() {
   return (
     <>
-      <div className="">Hello</div>
+      <div className="min-h-screen overflow-x-hidden">
+        <Navbar />
+        <main>
+          
+        </main>
+      </div>
     </>
   );
 }
