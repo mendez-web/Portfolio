@@ -1,10 +1,5 @@
-
 const Experience = () => {
-  return (
-    <section>
-        
-    </section>
-  )
-}
+  return <section></section>;
+};
 
-export default Experience
+export default Experience;

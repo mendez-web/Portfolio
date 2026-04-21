@@ -1,10 +1,5 @@
-
 const Project = () => {
-  return (
-    <section>
-        
-    </section>
-  )
-}
+  return <section></section>;
+};
 
-export default Project
+export default Project;
