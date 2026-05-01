@@ -2,15 +2,21 @@
 
 @theme {
   --color-background: #041113;
-  --background-text: #e7f3f5;
+  --color-background-text: #e7f3f5;
 
   --color-primary: #88d6e2;
-  --primary-text: black;
-  --color-secondary: #188191;
-  --color-accent: #1ecde8;
+  --color-primary-text: black;
 
-  --radius: 0.75rem;
+  --color-secondary: #188191;
+
+  --color-muted-text: #1ecde8;
+  --color-active-text: #e7f3f5;
+
+  --color-accent: #1ecde8;
   --color-border: #242b32;
+  --color-surface: #1a2329;
+
+  --radius-md: 0.75rem;
 }
 
 @layer base {
@@ -19,11 +25,42 @@
   }
   body {
     background-color: var(--color-background);
-    color: var(--background-text);
+    color: var(--color-background-text);
     font-family: "inter", sans-serif;
   }
 
   .font-serif {
     font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
   }
 }
