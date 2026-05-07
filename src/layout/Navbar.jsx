@@ -33,7 +33,7 @@ const Navbar = () => {
         </a>
         {/*Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
-          <div className="glass rounded-full px-2 py-1 flex items-ceter gap-1">
+          <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, idx) => (
               <a
                 href={link.href}
@@ -68,6 +68,7 @@ const Navbar = () => {
                 href={link.href}
                 key={idx}
                 className="text-lg text-muted-text hover:text-active-text py-2"
+                onClick={() => setIsMobile(false)}
               >
                 {link.label}
               </a>
