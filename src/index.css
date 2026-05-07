@@ -63,4 +63,8 @@
   .animate-fade-in {
     animation: fade-in 0.8s ease-out both;
   }
+  .hollow-text {
+    @apply text-transparent;
+    -webkit-text-stroke: 2px var(--color-primary);
+  }
 }
