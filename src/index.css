@@ -1,20 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #041113;
-  --color-background-text: #e7f3f5;
+  /* light */
+  --color-primary-light: yellow;
+  --color-primary-text-light: black;
+  --color-border-light: #242b32;
+  --color-active-text-light: white;
+  /* glass */
+  --color-surface-light: silver;
 
-  --color-primary: #88d6e2;
-  --color-primary-text: black;
-
-  --color-secondary: #188191;
-
+  /* dark */
+  --color-primary-text-black: #e7f3f5;
+  --color-primary-dark: #188191;
   --color-muted-text: #1ecde8;
-  --color-active-text: #e7f3f5;
-
+  --color-active-text-dark: black;
   --color-accent: #1ecde8;
-  --color-border: #242b32;
-  --color-surface: #1a2329;
+  --color-surface-dark: #1a2329;
+  --color-border-dark: #d8e1f0;
 
   --radius-md: 0.75rem;
 }
@@ -24,7 +26,7 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); */
     color: var(--color-background-text);
     font-family: "inter", sans-serif;
   }
@@ -36,12 +38,29 @@
 
 @layer components {
   .glass {
-    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-dark) 50%,
+      transparent
+    );
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
   }
-  .glass-strong {
-    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  .glass-dark {
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-dark) 80%,
+      transparent
+    );
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
+  }
+  .glass-light {
+    background-color: color-mix(
+      in srgb,
+      var(--color-surface-light) 80%,
+      transparent
+    );
     backdrop-filter: blur(24px);
     border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
   }
@@ -61,7 +80,7 @@
     }
   }
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out both;
+    animation: fade-in 0.5s ease-out both;
   }
   .hollow-text {
     @apply text-transparent;
